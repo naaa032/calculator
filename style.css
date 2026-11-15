@@ -1,0 +1,269 @@
+:root {
+  --bg: #eef4f4;
+  --mint: #b8dbd9;
+  --mint-dark: #8cb8b5;
+  --dark: #2f4550;
+  --btn1: #586f7c;
+  --accent: #7fa8a4;
+  --active-card: #799cad;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: 'Times New Roman', Times, serif;
+  padding: 20px;
+}
+
+/* Container Utama (Dual Panel Layout) */
+.app-container {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Panel Mode Kiri */
+.mode-sidebar {
+  flex: 1;
+  background: var(--mint);
+  border-radius: 28px;
+  padding: 20px;
+  border: 3px solid var(--dark);
+  box-shadow: 0 10px 0 rgba(82, 137, 132, 0.25), 0 18px 30px rgba(47, 69, 80, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-sidebar h2 {
+  margin: 0 0 16px 0;
+  color: var(--dark);
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 2px dashed var(--dark);
+  padding-bottom: 8px;
+}
+
+/* Mengecilkan ukuran Mode Grid agar muat dengan Helper Panel */
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.mode-card {
+  padding: 10px 6px; /* Dibuat lebih ringkas */
+}
+
+.mode-icon { font-size: 18px; }
+.mode-title { font-size: 13px; font-weight: bold; }
+
+/* Panel Pembantu Dinamis (Bawah Sidebar) */
+.helper-panel {
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px dashed var(--dark);
+  border-radius: 16px;
+  padding: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.helper-panel h3 {
+  margin: 0;
+  font-size: 14px;
+  color: var(--dark);
+  text-align: center;
+}
+
+.quick-template-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.tmpl-btn {
+  background: linear-gradient(145deg, #ffffff, #dcdcdc);
+  color: var(--dark);
+  border: 1.5px solid var(--dark);
+  border-radius: 8px;
+  padding: 8px 4px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 0 var(--dark);
+  transition: transform 0.1s ease;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.tmpl-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 var(--dark);
+}
+
+.example-box {
+  background: #fff;
+  border: 1px solid var(--dark);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 12px;
+  color: var(--dark);
+}
+
+.example-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.example-box code {
+  color: #c0392b;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.mode-card:hover {
+  background: linear-gradient(145deg, var(--accent), #5f8d89);
+}
+
+.mode-card:active,
+.mode-card.active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--dark);
+  background: linear-gradient(145deg, var(--active-card), #586f7c);
+}
+
+.mode-icon { font-size: 24px; }
+.mode-title { font-size: 14px; font-weight: bold; }
+
+/* Panel Kalkulator Kanan */
+.calculator {
+  width: 440px;
+  background: var(--mint);
+  border-radius: 28px;
+  padding: 22px;
+  border: 3px solid var(--dark);
+  box-shadow: 0 10px 0 rgba(82, 137, 132, 0.25), 0 18px 30px rgba(47, 69, 80, 0.25);
+}
+
+.mode-indicator {
+  background: var(--dark);
+  color: #fff;
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+#display {
+  width: 100%;
+  height: 68px;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--dark);
+  font-size: 26px;
+  padding: 12px 16px;
+  text-align: right;
+  outline: none;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px;
+  line-height: 1.2;
+  white-space: pre;
+  overflow-x: auto;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+button {
+  background: linear-gradient(145deg, var(--btn1), var(--dark));
+  color: #f4f4f9;
+  border: 3px solid var(--dark);
+  border-radius: 12px;
+  padding: 14px 10px;
+  font-size: 17px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--dark);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  user-select: none;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+button:active,
+button.active-key {
+  transform: translateY(4px) scale(.985);
+  box-shadow: 0 2px 0 var(--dark);
+  background: linear-gradient(180deg, #3b5d69, var(--dark));
+}
+
+#equals {
+  grid-column: span 3;
+  background: linear-gradient(145deg, var(--dark), #1c2a33);
+  font-weight: 700;
+  box-shadow: 0 6px 0 #162229;
+}
+
+#toggleFrac {
+  background: linear-gradient(145deg, var(--accent), #5f8d89);
+  font-weight: 600;
+}
+
+.matrix-panel {
+  background: rgba(47, 69, 80, 0.08);
+  border-radius: 14px;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 2px dashed var(--dark);
+}
+
+.matrix-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.matrix-btn {
+  background: linear-gradient(145deg, var(--accent), #5f8d89);
+  color: #fff;
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--dark);
+  transition: transform 0.1s ease;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.matrix-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--dark);
+}
+
+/* Responsif Layar Kecil */
+@media (max-width: 800px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .calculator {
+    width: 100%;
+  }
+}

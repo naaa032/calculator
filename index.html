@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mint 3D Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjs@11.8.0/lib/browser/math.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Kiri -->
+    <aside class="mode-sidebar">
+      <h2>Pilih Mode</h2>
+      
+      <!-- Grid Tombol Mode yang Lebih Ringkas -->
+      <div class="mode-grid">
+        <button class="mode-card active" data-mode="standar">
+          <span class="mode-title">Aritmatika</span>
+        </button>
+        
+        <button class="mode-card" data-mode="aljabar">
+          <span class="mode-title">Aljabar</span>
+        </button>
+
+        <button class="mode-card" data-mode="matriks">
+          <span class="mode-title">Matriks</span>
+        </button>
+
+        <button class="mode-card" data-mode="kalkulus">
+          <span class="mode-title">Kalkulus</span>
+        </button>
+      </div>
+
+      <!-- Area Kosong yang Diisi Template / Contoh Input Dinamis -->
+      <div class="helper-panel">
+        <h3 id="helperTitle">Template & Contoh</h3>
+        
+        <!-- Grid Tombol Simbol/Template Cepat -->
+        <div id="quickTemplateGrid" class="quick-template-grid">
+          <!-- Diisi via JavaScript sesuai mode -->
+        </div>
+
+        <!-- Contoh Cara Penulisan -->
+        <div class="example-box">
+          <span class="example-label">Contoh Input:</span>
+          <code id="exampleCode">2 + 3 * 5</code>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Kalkulator Utama (Kanan) -->
+    <main class="calculator">
+      <div id="modeIndicator" class="mode-indicator">Mode: Aritmatika Standar</div>
+
+      <div id="display" contenteditable="true" spellcheck="false" aria-label="calculator display"></div>
+
+      <div class="buttons">
+        <button>(</button>
+        <button>)</button>
+        <button>√</button>
+        <button>^</button>
+
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>÷</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>×</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+
+        <button>.</button>
+        <button>0</button>
+        <button>+</button>
+        <button>C</button>
+
+        <button>π</button>
+        <button>e</button>
+        <button>log</button>
+        <button>ln</button>
+
+        <button>sin</button>
+        <button>cos</button>
+        <button>tan</button>
+        <button id="DEL">DEL</button>
+
+        <button id="equals">=</button>
+        <button id="toggleFrac">↔ Frac</button>
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
